@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(208, 208, 208);
+    padding-bottom: 60px; /* Adjust based on footer height */
+}
+
+.content-container {
+    background: linear-gradient(
+        to right,
+        rgba(186, 163, 100, 0.5), /* Lighter gradient color */
+        rgb(244, 187, 68, 0.5) /* Lighter gradient color */
+    ), url('../images/Gita-banner.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin: 20px auto;
+    max-width: 1600px;
+    width: 90%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 2.5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Blinking red label */
+@keyframes blink-red {
+    0% { color: red; }
+    50% { color: transparent; }
+    100% { color: red; }
+}
+
+label {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: 900;
+    animation: blink-red 1.5s infinite;
+    font-size: 1.2em;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    width: 100px;
+}
+button:hover {
+    background-color: #218838;
+}
+
+input[type="text"], input[type="submit"], button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#results h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.container {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+.chapter-verse-container {
+    background-color: #fff3cd; /* Yellow background */
+}
+.translation-container {
+    background-color: #d4edda; /* Light green background */
+}
+
+#footer {
+    background-image: linear-gradient(to bottom, rgb(192, 64, 0), rgb(255, 192, 0, 0.7));
+    background-size: cover;
+    background-position: center center;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#footer p {
+    margin: 0;
+    font-weight: 900;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    label {
+        font-size: 1em;
+    }
+    input[type="text"], input[type="submit"], button {
+        font-size: 1em;
+    }
+    #footer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    label {
+        font-size: 1em;
+    }
+    input[type="text"], input[type="submit"], button {
+        font-size: 0.9em;
+    }
+    #footer {
+        font-size: 12px;
+    }
+    button {
+        width: 100%; /* Buttons take full width on smaller screens */
+        margin: 10px 0; /* Add margin between buttons vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    form {
+        margin: 10px;
+    }
+    input[type="text"], input[type="submit"], button {
+        width: 100%;
+        font-size: 0.8em;
+    }
+    label {
+        font-size: 0.9em;
+    }
+    #footer {
+        font-size: 10px;
+        padding: 8px;
+    }
+}
