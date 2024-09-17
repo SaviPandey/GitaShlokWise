@@ -19,19 +19,20 @@ shloka_embeddings = [hn_model.encode(hn_data['Enlgish Translation'][i], convert_
 embedding_size = len(shloka_embeddings[0])
 annoy_index = AnnoyIndex(embedding_size, 'angular')
 
-for i, embedding in enumerate(shloka_embeddings):
-  annoy_index.add_item(i, embedding)
-  if i % 20 == 0:
-    print(f"Building Annoy Index: {i}/{len(shloka_embeddings)}")
+# for i, embedding in enumerate(shloka_embeddings):
+#   annoy_index.add_item(i, embedding)
+#   if i % 20 == 0:
+#     print(f"Building Annoy Index: {i}/{len(shloka_embeddings)}")
 
-annoy_index.build(18) #18 Trees for faster Search
-print("Annoy index built successfully.")
+# annoy_index.build(18) 
+# print("Annoy index built successfully.")
 
 # Save the index to a file
 # annoy_index.save('annoy_index.ann')
 # print("Annoy index saved successfully.")
 
-# annoy_index.load('annoy_index.ann')
+annoy_index.load('annoy_index.ann')
+print("Annoy index loaded successfully.")
 
 @app.route('/')
 def index():
