@@ -74,8 +74,8 @@
             // Show the results div
             document.getElementById('results').style.display = 'block';
 
-            typeText(chapterElement, `Chapter: ${data.chapter}`, 50, checkCompletion);
-            typeText(verseElement, `Verse: ${data.verse}`, 50, checkCompletion);
+            typeText(chapterElement, `Chapter: ${data.chapter}`, 20, checkCompletion);
+            typeText(verseElement, `Verse: ${data.verse}`, 20, checkCompletion);
             // typeText(sanskritElement, `Sanskrit Translation:\n${data.sanskrit_translation}`, 50, checkCompletion )
             typeText(englishElement, `English Translation:\n${data.english_translation}`, 50, checkCompletion);
             typeText(hindiElement, `Hindi Translation:\n${data.hindi_translation}`, 50, checkCompletion);
@@ -96,15 +96,20 @@
             });
         });
 
-        document.getElementById('continue-button').addEventListener('click', function() {
+        function clearResults() {
             document.getElementById('result-chapter').innerHTML = '';
             document.getElementById('result-verse').innerHTML = '';
             // document.getElementById('result-sanskrit-translation').innerHTML = '';
             document.getElementById('result-english-translation').innerHTML = '';
             document.getElementById('result-hindi-translation').innerHTML = '';
+            document.getElementById('results').style.display = 'none'; // Hide results div
+        }
+
+        document.getElementById('continue-button').addEventListener('click', function() {
+            clearResults();
+            document.getElementById('query').value = ''; // Clear the input field
             document.getElementById('continue-button').style.display = 'none'; // Hide continue button
             document.getElementById('break-button').style.display = 'none'; // Hide break button
-            document.getElementById('results').style.display = 'none'; // Hide results div
         });
 
         document.getElementById('break-button').addEventListener('click', function() {
@@ -114,6 +119,7 @@
             document.getElementById('result-english-translation').innerHTML = '';
             document.getElementById('result-hindi-translation').innerHTML = '';
             document.getElementById('results').style.display = 'none'; // Hide results div
+            document.getElementById('query').value = ''; // Clear the input field
         });
     </script>
 </body>
