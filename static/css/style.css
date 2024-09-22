@@ -3,15 +3,26 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(208, 208, 208);
-    padding-bottom: 60px; /* Adjust based on footer height */
+    background: url('../images/universe.jpg');
+    /* background: linear-gradient(
+        rgba(255, 165, 0, 0.5), 
+        rgba(255, 165, 0, 0.5)
+      ),
+      url('../images/universe.jpg');  */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-color: rgb(208, 208, 208); 
+    padding-bottom: 60px; 
 }
+
 
 .content-container {
     background: linear-gradient(
         to right,
-        rgba(186, 163, 100, 0.5), /* Lighter gradient color */
-        rgb(244, 187, 68, 0.5) /* Lighter gradient color */
+        rgba(186, 163, 100, 0.5), 
+        rgb(244, 187, 68, 0.5) 
     ), url('../images/Gita-banner.jpg');
     background-size: cover;
     background-position: center 20%;
@@ -52,6 +63,12 @@ label {
     animation: blink-red 1.5s infinite;
     font-size: 1.2em;
 }
+#controls {
+    display: flex;                 
+    justify-content: space-between;   
+    /* padding: 0 20px;                  */
+    width: 100%;                      
+}
 button {
     padding: 10px 20px;
     border: none;
@@ -87,6 +104,7 @@ input[type="submit"]:hover {
 }
 
 #results h2 {
+    color: white;
     margin-bottom: 10px;
     text-align: center;
     font-size: 2em;
@@ -155,8 +173,8 @@ input[type="submit"]:hover {
         font-size: 12px;
     }
     button {
-        width: 100%; /* Buttons take full width on smaller screens */
-        margin: 10px 0; /* Add margin between buttons vertically */
+        width: 100%; 
+        margin: 10px 0; 
     }
 }
 

@@ -26,7 +26,7 @@
             <div id="result-chapter" class="typing-effect"></div>
             <div id="result-verse" class="typing-effect"></div>
         </div>
-        <!-- <div id="result-sanskrit-translation" class="container translation-container typing-effect"></div> -->
+        <div id="result-sanskrit-translation" class="container translation-container typing-effect"></div>
         <div id="result-english-translation" class="container translation-container typing-effect"></div>
         <div id="result-hindi-translation" class="container translation-container typing-effect"></div>
     </div>
@@ -56,7 +56,7 @@
         function handleResult(data) {
             const chapterElement = document.getElementById('result-chapter');
             const verseElement = document.getElementById('result-verse');
-            // const sanskritElement = document.getElementById('result-sanskrit-translation');
+            const sanskritElement = document.getElementById('result-sanskrit-translation');
             const englishElement = document.getElementById('result-english-translation');
             const hindiElement = document.getElementById('result-hindi-translation');
 
@@ -76,7 +76,7 @@
 
             typeText(chapterElement, `Chapter: ${data.chapter}`, 20, checkCompletion);
             typeText(verseElement, `Verse: ${data.verse}`, 20, checkCompletion);
-            // typeText(sanskritElement, `Sanskrit Translation:\n${data.sanskrit_translation}`, 50, checkCompletion )
+            typeText(sanskritElement, `Sanskrit Shlok:\n${data.sanskrit_translation}`, 50, checkCompletion )
             typeText(englishElement, `English Translation:\n${data.english_translation}`, 50, checkCompletion);
             typeText(hindiElement, `Hindi Translation:\n${data.hindi_translation}`, 50, checkCompletion);
         }
@@ -99,7 +99,7 @@
         function clearResults() {
             document.getElementById('result-chapter').innerHTML = '';
             document.getElementById('result-verse').innerHTML = '';
-            // document.getElementById('result-sanskrit-translation').innerHTML = '';
+            document.getElementById('result-sanskrit-translation').innerHTML = '';
             document.getElementById('result-english-translation').innerHTML = '';
             document.getElementById('result-hindi-translation').innerHTML = '';
             document.getElementById('results').style.display = 'none'; // Hide results div
@@ -115,7 +115,7 @@
         document.getElementById('break-button').addEventListener('click', function() {
             document.getElementById('result-chapter').innerHTML = 'Paused'; // Set text to indicate pause
             document.getElementById('result-verse').innerHTML = '';
-            // document.getElementById('result-sanskrit-translation').innerHTML = '';
+            document.getElementById('result-sanskrit-translation').innerHTML = '';
             document.getElementById('result-english-translation').innerHTML = '';
             document.getElementById('result-hindi-translation').innerHTML = '';
             document.getElementById('results').style.display = 'none'; // Hide results div
